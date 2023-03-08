@@ -118,7 +118,7 @@ def show_matrix(matrix):
             print(',', end='')
         i += 1
         if i == 8:
-            print("}", end='') 
+            print("},", end='') 
             i = 0
             cnt_arr += 1
             print()

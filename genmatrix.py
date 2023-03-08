@@ -109,12 +109,24 @@ def mono_genmatrix(image, flip, scan_dir, endian, color_reverse, increase):
 
 def show_matrix(matrix):
     i = 0
+    cnt_arr = 0
     for v in matrix:
-        print('0x%02x, ' % v, end='')
+        if i == 0:
+            print("{", end='')
+        print('0x%02x' % v, end='')
+        if i != 7:
+            print(',', end='')
         i += 1
-        if i == 16:
+        if i == 8:
+            print("}", end='') 
             i = 0
+            cnt_arr += 1
             print()
+    print()
+    print()
+    print()
+    print("cnt_arr is ", end='')
+    print(cnt_arr)
 
 def main():
     help = 'Usage: %s [option]' % sys.argv[0]
